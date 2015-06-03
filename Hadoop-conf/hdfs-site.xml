@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration> 
+	
+  <property>
+    <name>dfs.namenode.name.dir</name>
+    <value>${hadoop.system.dir}/dfs/name</value>
+    <description>Determines where on the local filesystem the DFS name node should store the name table. If this is a comma-delimited list of directories then the name table is replicated in all of the directories, for redundancy.</description>
+  </property>
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>${hadoop.system.dir}/dfs/data</value>
+    <description>Determines where on the local filesystem an DFS data node should store its blocks. If this is a comma-delimited list of directories, then data will be stored in all named directories, typically on different devices. Directories that do not exist are ignored. </description>
+  </property>
+  <property>
+    <name>dfs.replication</name>
+    <value>1</value>
+  </property>
+  <property>
+    <!-- 是否对DFS中的文件进行权限控制(测试中一般用false)-->
+    <name>dfs.permissions</name>
+    <value>false</value>
+  </property>
+  <property>
+    <name>dfs.webhdfs.enabled</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>dfs.image.transfer.timeout</name>
+    <value>1200000</value>
+  </property>
+  
+  <property>
+    <name>dfs.datanode.socket.write.timeout</name>
+    <value>1200000</value>
+  </property>
+
+  <property>
+    <name>dfs.socket.timeout</name>
+    <value>1200000</value>
+  </property>
+
+  <property>
+    <name>dfs.client.socket-timeout</name>
+    <value>1200000</value>
+  </property>
+
+  <property>
+    <name>dfs.datanode.max.xcievers</name>
+    <value>4096</value>
+  </property>
+
+  <property>
+    <name>dfs.http.address</name>
+    <value>pigpigpig-client6:50070</value>
+  </property>
+
+  <property>
+    <name>dfs.secondary.http.address</name>
+    <value>pigpigpig-client2:50090</value>
+  </property>
+
+</configuration>

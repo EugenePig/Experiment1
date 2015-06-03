@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+	
+  <property>
+    <name>hadoop.system.dir</name> 
+    <value>/mnt/hadoop-2.4.1</value>
+    <description>A base for other temporary directories. Please make sure that this directory is readable/writable for the hadoop-related processes.</description>
+  </property>
+  <property>
+    <name>hadoop.tmp.dir</name> 
+    <value>${hadoop.system.dir}/tmp</value>
+  </property>
+  <property>
+    <!-- 用于dfs命令模块中指定默认的文件系统协议 -->
+    <name>fs.default.name</name>
+    <value>hdfs://pigpigpig-client6:9000</value>
+  </property>
+  
+  <!--<property>  
+    <name>io.compression.codecs</name>  
+    <value>org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.DefaultCodec</value>  
+  </property>  -->  
+  <property>  
+    <name>io.compression.codecs</name>  
+    <value>org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec</value>  
+  </property>
+  <property>  
+    <name>io.compression.codec.lzo.class</name>  
+    <value>com.hadoop.compression.lzo.LzoCodec</value>  
+  </property>
+
+</configuration>

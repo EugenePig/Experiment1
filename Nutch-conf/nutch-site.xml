@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+  <property>
+    <name>http.agent.name</name>
+    <value>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari</value>
+  </property>
+
+  <property>
+   <name>storage.data.store.class</name>
+   <value>org.apache.gora.hbase.store.HBaseStore</value>
+   <description>Default class for storing data</description>
+  </property>
+
+  <property>
+    <name>http.accept.language</name>
+    <value>ja-jp,en-us,en-gb,zh-tw,zh-cn,en;q=0.7,*;q=0.3</value>
+    <description>Value of the “Accept-Language” request header field.
+      This allows selecting non-English language as default one to retrieve.
+      It is a useful setting for search engines build for certain national group.</description>
+  </property>
+
+  <property>
+    <name>parser.character.encoding.default</name>
+    <value>utf-8</value>
+    <description>The character encoding to fall back to when no other information
+    is available</description>
+  </property>
+
+  <property>
+    <name>plugin.includes</name>
+    <!-- <value>protocol-http|index-(basic|anchor|metadata|more)|query-(basic|site|url|lang)|indexer-solr|nutch-extensionpoints|protocol-httpclient|urlfilter-regex|parse-(text|html|msexcel|msword|mspowerpoint|pdf|tika|metatags)|summary-basic|scoring-opic|urlnormalizer-(pass|regex|basic)</value> -->
+    <!-- <value>index-(basic|anchor|metadata|more)|indexer-(solr|elastic)|language-identifier|nutch-extensionpoints|parse-(text|msexcel|msword|mspowerpoint|pdf|tika|metatags|js)|protocol-(http|httpclient)|query-(basic|site|url|lang)|response-(json|xml)|summary-basic|scoring-opic|urlfilter-regex|urlnormalizer-(pass|regex|basic)</value> -->
+    <value>index-(basic|anchor|metadata|more)|indexer-solr|language-identifier|nutch-extensionpoints|parse-(text|msexcel|msword|mspowerpoint|pdf|tika|metatags|js)|protocol-(http|httpclient)|query-(basic|site|url|lang)|response-(json|xml)|summary-basic|scoring-opic|urlfilter-regex|urlnormalizer-(pass|regex|basic)</value>
+  </property>
+
+  <property>
+    <name>fetcher.server.delay</name>
+    <value>0.05</value>
+    <description>The number of seconds the fetcher will delay between
+     successive requests to the same server.</description>
+  </property>
+
+  <property>
+    <name>fetcher.threads.fetch</name>
+    <value>50</value>
+    <description>The number of FetcherThreads the fetcher should use.
+    This is also determines the maximum number of requests that are
+    made at once (each FetcherThread handles one connection). The total
+    number of threads running in distributed mode will be the number of
+    fetcher threads * number of nodes as fetcher has one map task per node.
+    </description>
+  </property>
+
+  <property>
+    <name>fetcher.threads.per.queue</name>
+    <value>10</value>
+    <description>This number is the maximum number of threads that
+      should be allowed to access a queue at one time. Replaces
+      deprecated parameter 'fetcher.threads.per.host'.
+     </description>
+  </property>
+
+  <property>
+    <name>fetcher.server.min.delay</name>
+    <value>0.0</value>
+    <description>The minimum number of seconds the fetcher will delay between
+    successive requests to the same server. This value is applicable ONLY
+    if fetcher.threads.per.host is greater than 1 (i.e. the host blocking
+    is turned off).</description>
+  </property> 
+
+  <property>
+    <name>http.agent.version</name>
+    <value>537.36</value>
+    <description>A version string to advertise in the User-Agent  header.</description>
+  </property>
+
+</configuration>
